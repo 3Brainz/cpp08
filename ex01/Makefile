@@ -3,7 +3,7 @@ NAME = ex00
 
 #Compiler
 CC = 			clang++
-CFLAGS = 		-Wall -Wextra -Werror -std=c++98
+CFLAGS = 		-Wall -Wextra -Werror
 
 #Shell
 MKDIR =			mkdir -p
@@ -15,7 +15,8 @@ OBJDIR =  		./objs
 INCDIR = 		./incs
 
 #files
-FILES =			main.cpp
+FILES =			banana.cpp \
+				main.cpp
 
 #Srcs
 SRCS = 			$(foreach FILE, $(FILES), $(shell find $(SRCDIR) -name $(FILE)))

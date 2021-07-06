@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <exception>
-#include <array>
+#include <vector>
 
 
 class	findException : public std::exception
@@ -35,7 +35,10 @@ typename T::iterator	easyfind(T container, int toFind)
 	for (ptr = container.begin() ; ptr < container.end(); ptr++)
 	{
 		if (*ptr == toFind)
+		{
+			std::cout << "found" << std::endl;
 			return (ptr);
+		}
 	}
 	throw (findException());
 }
