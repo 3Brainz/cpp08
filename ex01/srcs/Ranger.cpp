@@ -1,21 +1,21 @@
-#include <banana.hpp>
+#include <Ranger.hpp>
 
-banana::banana() : _len(0)
+Ranger::Ranger() : _len(0)
 {
 	_arr.clear();
 }
 
-banana::banana(unsigned int len) : _len(len)
+Ranger::Ranger(unsigned int len) : _len(len)
 {
 	_arr.clear();
 }
 
-banana::~banana()
+Ranger::~Ranger()
 {
 	_arr.clear();
 }
 
-banana::banana(banana &toCopy) : _len(toCopy._len)
+Ranger::Ranger(Ranger &toCopy) : _len(toCopy._len)
 {
 	_arr.clear();
 	std::vector<int>::iterator	ptr = toCopy._arr.begin();
@@ -30,7 +30,7 @@ banana::banana(banana &toCopy) : _len(toCopy._len)
 	}
 }
 
-banana &	banana::operator = (banana & toCopy)
+Ranger &	Ranger::operator = (Ranger & toCopy)
 {
 	_len = toCopy._len;
 	if (this != &toCopy)
@@ -50,7 +50,7 @@ banana &	banana::operator = (banana & toCopy)
 	return (*this);
 }
 
-void	banana::addNumber(int nu)
+void	Ranger::addNumber(int nu)
 {
 	if (_arr.size() < _len)
 	{
@@ -61,7 +61,7 @@ void	banana::addNumber(int nu)
 		throw (VectorFullException());
 }
 
-unsigned	banana::longestSpan(void)
+unsigned	Ranger::longestSpan(void)
 {
 	if (_arr.size() < 2)
 		throw (NotEnoughNumbersException());
@@ -80,7 +80,7 @@ unsigned	banana::longestSpan(void)
 	return (res);
 }
 
-unsigned	banana::shortestSpan(void)
+unsigned	Ranger::shortestSpan(void)
 {
 	if (_arr.size() < 2)
 		throw (NotEnoughNumbersException());
@@ -99,7 +99,7 @@ unsigned	banana::shortestSpan(void)
 	return (res);
 }
 
-void		banana::addRange(int from, int to)
+void		Ranger::addRange(int from, int to)
 {
 	if (from >= to)
 		throw (std::exception());
@@ -116,12 +116,20 @@ void		banana::addRange(int from, int to)
 	}
 }
 
-const char * banana::VectorFullException::what() const throw ()
+const char * Ranger::VectorFullException::what() const throw ()
 {
 	return ("Vector is full");
 }
 
-const char * banana::NotEnoughNumbersException::what() const throw ()
+const char * Ranger::NotEnoughNumbersException::what() const throw ()
 {
 	return ("Not enough numbers");
+}
+
+std::ostream & operator << (std::ostream & stream, Ranger &ranger)
+{
+	ranger.longestSpan();
+	ranger.shortestSpan();
+	stream << "longestSpan:" << " " << ranger.longestSpan() << " " << "shortestSpan:" << " " << ranger.shortestSpan();
+	return (stream);
 }

@@ -1,32 +1,33 @@
-#include <banana.hpp>
+#include <Ranger.hpp>
 
 int main()
 {
-	banana	we(10000);
+	Ranger	test(10000);
 	char 	a;
 
 	try
 	{
-		std::cout << we.longestSpan() << "   " << we.shortestSpan();
+		std::cout << test << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
-	we.addRange(0, 10);
+	test.addRange(0, 10);
 	try
 	{
-		std::cout << we.longestSpan() << "   " << we.shortestSpan();
+		std::cout << test << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "insert a char:" << std::endl;
 	std::cin >> a;
-	we.addRange(0, 10000);
+	test.addRange(0, 10000);
 	try
 	{
-		std::cout << we.longestSpan() << "   " << we.shortestSpan();
+		std::cout << test << std::endl;
 	}
 	catch(const std::exception& e)
 	{

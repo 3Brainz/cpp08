@@ -1,5 +1,5 @@
 #Name
-NAME = ex00
+NAME = easyfind
 
 #Compiler
 CC = 			clang++

@@ -6,14 +6,14 @@
 #include <array>
 #include <iterator>
 
-class banana
+class Ranger
 {
 public:
-	banana();
-	banana(unsigned int len);
-	banana(banana &toCopy);
-	~banana();
-	banana &	operator = (banana & toCopy);
+	Ranger();
+	Ranger(unsigned int len);
+	Ranger(Ranger &toCopy);
+	~Ranger();
+	Ranger &	operator = (Ranger & toCopy);
 	void		addNumber(int nu);
 	unsigned	shortestSpan(void);
 	unsigned	longestSpan(void);
@@ -26,3 +26,5 @@ private:
 	unsigned int			_len;
 	std::vector<int>		_arr;
 };
+
+std::ostream & operator << (std::ostream & stream, Ranger &ranger);

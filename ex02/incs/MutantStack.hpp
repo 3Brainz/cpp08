@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stack>
+#include <vector>
 
 template <typename T>
 class MutantStack : public std::stack<T>
@@ -8,8 +9,9 @@ class MutantStack : public std::stack<T>
 public:
 	MutantStack();
 	MutantStack(MutantStack &toCopy);
+	MutantStack(std::stack<T> &toCopy);
 	virtual ~MutantStack();
-	MutantStack &	operator = (MutantStack & toCopy);
+	MutantStack &	operator = (MutantStack<T> & toCopy);
 
 	typedef T* iterator;
 

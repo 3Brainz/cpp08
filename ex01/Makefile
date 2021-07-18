@@ -1,5 +1,5 @@
 #Name
-NAME = ex00
+NAME = ranger
 
 #Compiler
 CC = 			clang++
@@ -15,7 +15,7 @@ OBJDIR =  		./objs
 INCDIR = 		./incs
 
 #files
-FILES =			banana.cpp \
+FILES =			Ranger.cpp \
 				main.cpp
 
 #Srcs
